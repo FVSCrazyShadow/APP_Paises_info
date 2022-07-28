@@ -23,8 +23,8 @@
 
   <hr>
 
-  <div class="alert alert-danger">
-    No se encontró el país PAOSIDF...
+  <div *ngIf="error" class="alert alert-danger">
+    No se encontró nombre de ningún país que contenga o coincida con {{elemento}}.
   </div>
 
   <div class="row">
