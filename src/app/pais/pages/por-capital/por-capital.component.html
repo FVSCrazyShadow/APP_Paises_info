@@ -1,1 +1,33 @@
-<p>por-capital works!</p>
+<h2>Por Capital</h2>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col">
+
+      <app-pais-input (onEnter)="buscar( $event )"
+                      (onDebounce)="sugerencias( $event )"
+                      inputPlaceholder="Buscar capital."
+      ></app-pais-input>
+
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div *ngIf="error" class="alert alert-danger">
+    No se encontró nombre de ningún país que contenga o coincida con {{elemento}}.
+  </div>
+
+  <div *ngIf="paises.length > 0" class="row">
+
+    <div class="col">
+
+      <app-pais-tabla [inputPaises]="paises"></app-pais-tabla>
+
+    </div>
+
+  </div>
+</div>
